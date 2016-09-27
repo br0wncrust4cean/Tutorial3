@@ -21,6 +21,10 @@ public class BuddyInfo {
 	public void setAge(int age) {
 		this.age = age;
 	}
+	
+	public void sayHi(){
+		System.out.println("Sup");
+	}
 
 	private int age = 20;
 
