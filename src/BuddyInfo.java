@@ -24,6 +24,7 @@ public class BuddyInfo {
 	
 	public void sayHi(){
 		System.out.println("Sup");
+		System.out.println("I like cheese");
 	}
 
 	private int age = 20;
