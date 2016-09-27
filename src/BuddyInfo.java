@@ -1,6 +1,11 @@
 
 public class BuddyInfo {
-	private String name = "Taz";
+	private String name;
+	
+	public BuddyInfo(String n){
+		this.name=n;
+	}
+	
 	public String getName() {
 		return name;
 	}
@@ -21,7 +26,7 @@ public class BuddyInfo {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		BuddyInfo me = new BuddyInfo();
+		BuddyInfo me = new BuddyInfo("Bhavik");
 		System.out.println("Hello " + me.getName());
 	}
 }
