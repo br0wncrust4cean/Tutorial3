@@ -33,5 +33,6 @@ public class BuddyInfo {
 		// TODO Auto-generated method stub
 		BuddyInfo me = new BuddyInfo("Bhavik");
 		System.out.println("Hello " + me.getName());
+		Menu m = new Menu();
 	}
 }
