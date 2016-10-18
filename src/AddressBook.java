@@ -1,6 +1,8 @@
 import java.util.ArrayList;
+import java.util.Observable;
+import java.awt.event.*;
 
-public class AddressBook {
+public class AddressBook extends Observable{
 	
 	private ArrayList<BuddyInfo> buddies = new ArrayList<>();
 	
@@ -14,14 +16,12 @@ public class AddressBook {
 		
 	}
 	
-	public static void main(String args[]) {
-		System.out.print("Top Kek");
-		BuddyInfo bi = new BuddyInfo("Bhavik");
-		BuddyInfo bi2 = new BuddyInfo("Taz");
-		AddressBook ab = new AddressBook();
-		ab.addBuddy(bi);
-		ab.addBuddy(bi2);
-		ab.removeBuddy(bi);
-		ab.removeBuddy(bi2);
+	public String toString(){
+		String info ="";
+		for(BuddyInfo b:buddies){
+			info += "Name: " + b.getName() + "\nAge: " + b.getAge() + "\n\n";
+		}
+		return info;
 	}
+	
 }
