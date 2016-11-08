@@ -16,6 +16,14 @@ public class AddressBook extends Observable{
 		
 	}
 	
+	public int size(){
+		return buddies.size();
+	}
+	
+	public void clear(){
+		buddies.clear();
+	}
+	
 	public String toString(){
 		String info ="";
 		for(BuddyInfo b:buddies){

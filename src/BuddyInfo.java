@@ -13,6 +13,12 @@ public class BuddyInfo{
 		this.phoneNumber = 0;
 	}
 	
+	public BuddyInfo(BuddyInfo b){
+		this.name = b.getName();
+		this.age = b.getAge();
+		this.phoneNumber = b.getPhoneNumber();
+	}
+	
 	public BuddyInfo(String n, int age, int phoneNumber){
 		this.name=n;
 		this.age = age;
@@ -43,9 +49,12 @@ public class BuddyInfo{
 		this.age = age;
 	}
 	
-	public void sayHi(){
-		System.out.println("Sup");
-		System.out.println("I like cheese");
+	public String sayHi(){
+		return "Hi there, " + this.name + "!";
+	}
+	
+	public boolean isOver18(){
+		return age > 18;
 	}
 	
 	public String toString(){
