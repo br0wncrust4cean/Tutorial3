@@ -20,9 +20,16 @@ public class AddressBook extends Observable{
 		return buddies.size();
 	}
 	
+	public void export(){
+		for(BuddyInfo buddy: buddies){
+			System.out.println(buddy.toString());
+		}
+	}
+	
 	public void clear(){
 		buddies.clear();
 	}
+	
 	
 	public String toString(){
 		String info ="";

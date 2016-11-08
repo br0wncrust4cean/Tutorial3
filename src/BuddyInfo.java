@@ -1,6 +1,6 @@
-import java.awt.event.ActionEvent;
-import java.awt.*;
-import java.awt.event.*;
+
+import java.util.Scanner;
+
 
 public class BuddyInfo{
 	private String name;
@@ -17,6 +17,12 @@ public class BuddyInfo{
 		this.name = b.getName();
 		this.age = b.getAge();
 		this.phoneNumber = b.getPhoneNumber();
+	}
+	
+	public BuddyInfo(String n){
+		this.name = n;
+		this.age = 0;
+		this.phoneNumber = 0;
 	}
 	
 	public BuddyInfo(String n, int age, int phoneNumber){
@@ -57,14 +63,21 @@ public class BuddyInfo{
 		return age > 18;
 	}
 	
+	public static BuddyInfo importBuddy(String s){
+		Scanner scan = new Scanner(s).useDelimiter(", ");
+		String name = scan.next();
+		int age = scan.nextInt();
+		int phoneNumber = scan.nextInt();
+		return new BuddyInfo(name, age, phoneNumber);
+	}
+	
 	public String toString(){
 		return "Name: " + this.name + "/Age: " + this.age + "/Phone Number: " + this.phoneNumber;
 	}
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		BuddyInfo me = new BuddyInfo("Bhavik", 20, 31313131);
-		System.out.println("Hello " + me.getName());
-		Menu m = new Menu();
+		String buddy = "Bhavik, 20, 212121";
+		System.out.println(importBuddy(buddy));
 	}
 }
