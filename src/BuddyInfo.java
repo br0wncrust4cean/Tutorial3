@@ -1,8 +1,9 @@
 
+import java.io.Serializable;
 import java.util.Scanner;
 
 
-public class BuddyInfo{
+public class BuddyInfo implements Serializable{
 	private String name;
 	private int age;
 	private int phoneNumber;
@@ -72,9 +73,18 @@ public class BuddyInfo{
 	}
 	
 	public String toString(){
-		return "Name: " + this.name + "/Age: " + this.age + "/Phone Number: " + this.phoneNumber;
+		//return "Name: " + this.name + "/Age: " + this.age + "/Phone Number: " + this.phoneNumber;
+		return name + ", " + age + ", " + phoneNumber;
 	}
-
+	
+	@Override
+	public boolean equals(Object o){
+		if (o == this) return true;
+		if (!(o instanceof BuddyInfo) || (o == null)) return false;
+		BuddyInfo b = (BuddyInfo) o;
+		
+		return b.getAge() == this.age && b.getName().equals(this.name) && b.getPhoneNumber() == this.phoneNumber;
+	}
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		String buddy = "Bhavik, 20, 212121";

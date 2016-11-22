@@ -1,5 +1,7 @@
 import static org.junit.Assert.*;
 
+import java.util.ArrayList;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -32,6 +34,22 @@ public class TestAddressBook {
 	@Test
 	public void test() {
 		assertEquals("Testing size", 3, addressBook.size());
+	}
+	
+	@Test
+	public void testImport(){
+		addressBook.export();
+		AddressBook temp = AddressBook.importFile();
+		assertEquals(addressBook, temp);
+	}
+	
+	@Test
+	public void testObject(){
+		addressBook.exportObject();
+		ArrayList<BuddyInfo> buddies = addressBook.importObject();
+		AddressBook temp = new AddressBook();
+		temp.setBuddies(buddies);
+		assertEquals(temp, addressBook);
 	}
 	
 	@Test
