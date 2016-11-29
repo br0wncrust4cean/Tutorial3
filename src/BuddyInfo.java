@@ -64,6 +64,16 @@ public class BuddyInfo implements Serializable{
 		return age > 18;
 	}
 	
+	public String toXML(){
+		String info = "";
+		info += "<BuddyInfo>\n";
+		info += "<Name>" + getName() + "</Name>\n";
+		info += "<Age>" + getAge() + "</Age>\n";
+		info += "<PhoneNumber>" + getPhoneNumber() + "</PhoneNumber>\n";
+		info += "</BuddyInfo>\n";
+		return info;
+	}
+	
 	public static BuddyInfo importBuddy(String s){
 		Scanner scan = new Scanner(s).useDelimiter(", ");
 		String name = scan.next();
